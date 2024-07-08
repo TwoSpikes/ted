@@ -51,6 +51,7 @@ fn main() {
                                 mode.to_string(),
                                 ::termion::cursor::Goto(x, y),
                             );
+                            _ = stdout.flush();
                         },
                         _ => {
 
