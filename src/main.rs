@@ -37,9 +37,6 @@ fn main() {
             code,
             ..
         }) = ch {
-            if code == ::crossterm::event::KeyCode::Char('q') {
-                break;
-            }
             match mode {
                 Mode::NORMAL => {
                     match code {
@@ -53,6 +50,9 @@ fn main() {
                             );
                             _ = stdout.flush();
                         },
+                        ::crossterm::event::KeyCode::Char('q') => {
+                            break;
+                        }
                         _ => {
 
                         },
